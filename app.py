@@ -117,5 +117,7 @@ def callback():
     return redirect(url_for("home"))
 
 
-# if __name__ == "__main__":
-    # app.run(ssl_context='adhoc')
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for("home"))
