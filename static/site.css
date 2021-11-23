@@ -1,38 +1,36 @@
 h1 {
-    text-align: center;
-    font-weight: 300;
-    color: blue;
-    font-size: 100px;
+  text-align: center;
+  font-weight: 300;
+  color: blue;
+  font-size: 100px;
 }
 
-
-
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: azure;
-    position: fixed;
-    top: 0;
-    width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  background-color: rgb(87, 87, 87);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 li a {
-    float: left;
-    text-align: center;
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
+  float: left;
+  text-align: center;
+  display: block;
+  color: #000;
+  text-decoration: none;
+  padding: 10px;
 }
 
 li a.active {
-    background-color: #04aa6d;
-    color: white;
+  background-color: rgb(54, 54, 54);
+  color: white;
 }
 
 li a:hover {
-    background-color: #555;
-    color: white;
+  background-color: rgb(70, 70, 70);
+  color: white;
 }
-
