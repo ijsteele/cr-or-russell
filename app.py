@@ -18,9 +18,12 @@ from werkzeug import exceptions
 from db import init_db_command
 import db
 from user import User
+from dotenv import load_dotenv
 
-GOOGLE_CLIENT_ID = "577886556164-i4da8abclqef1igo5icgu0inng0p3227.apps.googleusercontent.com"
-GOOGLE_CLIENT_SECRET = "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"
+load_dotenv("api.env")
+
+GOOGLE_CLIENT_ID = os.getenv('GOOGLE_CLIENT_ID')
+GOOGLE_CLIENT_SECRET = os.getenv('GOOGLE_CLIENT_SECRET')
 GOOGLE_DISCOVERY_URL = (
     "https://accounts.google.com/.well-known/openid-configuration"
 )
