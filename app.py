@@ -124,3 +124,8 @@ def callback():
 def logout():
     logout_user()
     return redirect(url_for("home"))
+
+
+@app.route("/preferences")
+def preferences():
+    return render_template('preferences.html')

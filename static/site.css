@@ -5,7 +5,7 @@ h1 {
   font-size: 100px;
 }
 
-ul {
+ul.horizontal {
   list-style-type: none;
   margin: 0;
   padding: 10px;
@@ -16,21 +16,64 @@ ul {
   width: 100%;
 }
 
-li a {
-  float: left;
+ul.vertical {
+  margin: 0;
+  padding: 10px;
+  background-color: rgb(87, 87, 87);
+  list-style-type: none;
+  width: 15%;
+}
+
+li a,
+li b {
   text-align: center;
   display: block;
   color: #000;
   text-decoration: none;
   padding: 10px;
+  transition-duration: 0.4s;
+  border-radius: 8px;
 }
 
-li a.active {
+li a {
+  float: left;
+}
+
+li a:active,
+li b:active {
   background-color: rgb(54, 54, 54);
   color: white;
 }
 
-li a:hover {
+li a:hover,
+li b:hover {
   background-color: rgb(70, 70, 70);
   color: white;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border: none;
+}
+
+button {
+  background-color: gray;
+  color: white;
+  border: 3px solid gray;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: white;
+  color: gray;
 }
