@@ -4,10 +4,14 @@
 
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
 <ul class="horizontal">
-    <li><a class="active"href="#home">Home</a></li>
-    <li><a href="preferences">My Preferences</a></li>
-    <li><a href="about">About</a></li>
-    <li><a href="logout">Logout</a></li>
+    <li><a class="active"href="/">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li class="dropdown"><a class="dropbtn">My Account</a>
+    <div class="dropdown-content">
+        <a href="preferences">Preferences</a>
+        <a href="#">Settings</a>
+        <a href="logout">Logout</a>
+    </div></li>
 </ul>
 <h1>
     Choose Dining
@@ -16,6 +20,8 @@
 <div class="center">
 <button id="chooseDining">Where should I eat?</button>
 </div>
+
+
 
 
 </html>

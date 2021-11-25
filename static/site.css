@@ -1,8 +1,15 @@
 h1 {
   text-align: center;
   font-weight: 300;
-  color: blue;
+  color: black;
   font-size: 100px;
+  border: 1px;
+}
+
+h1:after {
+  content: " ";
+  display: block;
+  border: 2px solid black;
 }
 
 ul.horizontal {
@@ -22,33 +29,75 @@ ul.vertical {
   background-color: rgb(87, 87, 87);
   list-style-type: none;
   width: 15%;
+  border-radius: 8px;
 }
 
-li a,
-li b {
-  text-align: center;
-  display: block;
-  color: #000;
-  text-decoration: none;
-  padding: 10px;
-  transition-duration: 0.4s;
-  border-radius: 8px;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: show;
+  background-color: #333;
+}
+
+li {
+  float: none;
 }
 
 li a {
   float: left;
 }
 
-li a:active,
-li b:active {
-  background-color: rgb(54, 54, 54);
+li a,
+li b,
+.dropbtn {
+  display: block;
   color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition-duration: 0.4s;
+  border-radius: 8px;
 }
 
 li a:hover,
-li b:hover {
-  background-color: rgb(70, 70, 70);
+li a.active,
+li b:hover,
+li b.active,
+.dropdown:hover .dropbtn {
+  background-color: white;
+  color: gray;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: none;
+  top: 80%;
+  min-width: 160px;
+}
+
+.dropdown-content a {
+  background-color: gray;
   color: white;
+  border: 3px solid gray;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  float: none;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .center {
