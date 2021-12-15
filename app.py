@@ -56,7 +56,7 @@ def home():
     if current_user.is_authenticated:
         return render_template("homepage.html")
     else:
-        return '<a class="button" href="/login">Google Login</a>'
+        return render_template("login.html")
 
 
 def get_google_provider_cfg():

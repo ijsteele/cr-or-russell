@@ -4,6 +4,7 @@ import re
 from bs4 import BeautifulSoup
 import requests
 
+
 def get_cr_menu():
     '''
     This gets the menu from CR
@@ -27,12 +28,15 @@ def get_cr_menu():
     todays_food_items = []
 
     for item in range(0, len(json['Menu']['MenuProducts'])):
-        todays_food_items.append(json['Menu']['MenuProducts'][item]['Product']['MarketingName'])
-
+        data = json['Menu']['MenuProducts'][item]['Product']
+        item_dict = {'name': data['MarketingName'], 'ContainsEggs': data['ContainsEggs'], 'ContainsFish': data['ContainsFish'], 'ContainsMilk': data['ContainsMilk'], 'ContainsPeanuts': data['ContainsPeanuts'], 'ContainsShellfish': data['ContainsShellfish'],
+                     'ContainsSoy': data['ContainsSoy'], 'ContainsTreeNuts': data['ContainsTreeNuts'], 'ContainsWheat': data['ContainsWheat'], 'IsGlutenFree': data['IsGlutenFree'], 'IsHalal': data['IsHalal'], 'IsVegan': data['IsVegan'], 'IsVegetarian': data['IsVegetarian']}
+        todays_food_items.append(
+            item_dict)
     return todays_food_items
 
 
-def get_russle_menu():
+def get_russell_menu():
     '''
     This gets the menu from Russle dinding hall
 
@@ -55,8 +59,11 @@ def get_russle_menu():
     todays_food_items = []
 
     for item in range(0, len(json['Menu']['MenuProducts'])):
-        todays_food_items.append(json['Menu']['MenuProducts'][item]['Product']['MarketingName'])
-
+        data = json['Menu']['MenuProducts'][item]['Product']
+        item_dict = {'name': data['MarketingName'], 'ContainsEggs': data['ContainsEggs'], 'ContainsFish': data['ContainsFish'], 'ContainsMilk': data['ContainsMilk'], 'ContainsPeanuts': data['ContainsPeanuts'], 'ContainsShellfish': data['ContainsShellfish'],
+                     'ContainsSoy': data['ContainsSoy'], 'ContainsTreeNuts': data['ContainsTreeNuts'], 'ContainsWheat': data['ContainsWheat'], 'IsGlutenFree': data['IsGlutenFree'], 'IsHalal': data['IsHalal'], 'IsVegan': data['IsVegan'], 'IsVegetarian': data['IsVegetarian']}
+        todays_food_items.append(
+            item_dict)
     return todays_food_items
 
 
@@ -81,9 +88,13 @@ def get_pencader_menu():
     todays_food_items = []
 
     for item in range(0, len(json['Menu']['MenuProducts'])):
-        todays_food_items.append(json['Menu']['MenuProducts'][item]['Product']['MarketingName'])
-
+        data = json['Menu']['MenuProducts'][item]['Product']
+        item_dict = {'name': data['MarketingName'], 'ContainsEggs': data['ContainsEggs'], 'ContainsFish': data['ContainsFish'], 'ContainsMilk': data['ContainsMilk'], 'ContainsPeanuts': data['ContainsPeanuts'], 'ContainsShellfish': data['ContainsShellfish'],
+                     'ContainsSoy': data['ContainsSoy'], 'ContainsTreeNuts': data['ContainsTreeNuts'], 'ContainsWheat': data['ContainsWheat'], 'IsGlutenFree': data['IsGlutenFree'], 'IsHalal': data['IsHalal'], 'IsVegan': data['IsVegan'], 'IsVegetarian': data['IsVegetarian']}
+        todays_food_items.append(
+            item_dict)
     return todays_food_items
+
 
 def get_all_menus():
     '''
@@ -96,12 +107,10 @@ def get_all_menus():
         of lists of strings
     '''
     cr_menu = get_cr_menu()
-    russle_menu = get_russle_menu()
+    russle_menu = get_russell_menu()
     pencader_menu = get_pencader_menu()
-    print("i did a thing")
 
     return [cr_menu, russle_menu, pencader_menu]
-
 
 
 schedule.every().day.at("06:00").do(get_all_menus)
@@ -109,4 +118,4 @@ schedule.every().day.at("16:00").do(get_all_menus)
 
 while True:
     schedule.run_pending()
-    time.sleep(50)# wait ten seconds
+    time.sleep(50)  # wait fifty seconds
