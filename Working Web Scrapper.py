@@ -109,4 +109,4 @@ schedule.every().day.at("16:00").do(get_all_menus)
 
 while True:
     schedule.run_pending()
-    time.sleep(10)# wait ten seconds
+    time.sleep(50)# wait ten seconds
