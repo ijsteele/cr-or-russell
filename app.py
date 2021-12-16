@@ -1,6 +1,7 @@
 import json
 import os
 import sqlite3
+import web_scraper
 
 from flask import Flask, config, redirect, request, url_for, render_template
 from flask_login import (
@@ -129,3 +130,9 @@ def logout():
 @app.route("/preferences")
 def preferences():
     return render_template('preferences.html')
+
+@app.route("/get_best_option")
+def get_best_option():
+    print('hi')
+    res = web_scraper.find_best_place()
+    return '<h1>'+ res + '</h1>'

@@ -21,4 +21,3 @@ sheet_instance = sheet.get_worksheet(0)
 
 
 records_data = sheet_instance.get_all_records()
-print(records_data)
